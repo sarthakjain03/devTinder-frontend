@@ -13,6 +13,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
+      setLoginError("");
       const response = await axiosClient.post(
         "/login",
         {
@@ -31,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center my-10">
+    <div className="flex justify-center items-center min-h-screen pt-10 pb-32">
       <div className="card bg-base-300 w-96 shadow-sm">
         <div className="card-body">
           <h2 className="card-title justify-center">Login</h2>

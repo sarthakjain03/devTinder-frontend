@@ -1,4 +1,4 @@
-const UserCard = ({ userDetails }) => {
+const UserCard = ({ userDetails, showActionButtons = true }) => {
   return (
     <div className="card bg-base-200 w-96 shadow">
       <figure>
@@ -9,6 +9,7 @@ const UserCard = ({ userDetails }) => {
         {userDetails?.age && userDetails?.gender && (
           <p>{userDetails?.age + ", " + userDetails?.gender}</p>
         )}
+        <p>{userDetails?.about}</p>
         <div className="flex gap-4 flex-wrap">
           {userDetails?.skills?.map((skill, index) => (
             <div
@@ -19,10 +20,12 @@ const UserCard = ({ userDetails }) => {
             </div>
           ))}
         </div>
-        <div className="card-actions justify-center my-2">
-          <button className="btn btn-primary">Ignore</button>
-          <button className="btn btn-secondary">Interested</button>
-        </div>
+        {showActionButtons && (
+          <div className="card-actions justify-center my-2">
+            <button className="btn btn-primary">Ignore</button>
+            <button className="btn btn-secondary">Interested</button>
+          </div>
+        )}
       </div>
     </div>
   );
