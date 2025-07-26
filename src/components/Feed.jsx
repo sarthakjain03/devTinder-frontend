@@ -25,11 +25,19 @@ const Feed = () => {
     }
   }, []);
 
+  if (!feed) return;
+
+  if (feed?.length <= 0) {
+    return (
+      <div className="flex justify-center my-10 min-h-screen mx-auto">
+        <h1 className="font-bold text-3xl">No New Users Found</h1>
+      </div>
+    );
+  }
+
   return (
-    <div className="flex justify-center p-8 gap-6 flex-wrap">
-      {feed?.map((userDetails) => (
-        <UserCard key={userDetails._id} userDetails={userDetails} />
-      ))}
+    <div className="flex justify-center p-8 min-h-screen">
+      <UserCard userDetails={feed?.[0]} />
     </div>
   );
 };
