@@ -20,7 +20,7 @@ const Connections = () => {
   };
 
   useEffect(() => {
-    if (user && !connections) {
+    if (user) {
       fetchConnections();
     }
   }, [user]);
