@@ -23,11 +23,11 @@ const Connections = () => {
     if (user && !connections) {
       fetchConnections();
     }
-  }, []);
+  }, [user]);
 
   if (!connections) return;
 
-  if (connections.length === 0) {
+  if (connections?.length === 0) {
     return (
       <div className="flex justify-center my-10 min-h-screen mx-auto">
         <h1 className="font-bold text-3xl">No Connections Found</h1>
