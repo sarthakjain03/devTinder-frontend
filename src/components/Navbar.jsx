@@ -48,7 +48,10 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link>Settings</Link>
+                <Link to={"/connections"}>Connections</Link>
+              </li>
+              <li>
+                <Link to={"/requests"}>Requests</Link>
               </li>
               <li>
                 <p className="cursor-pointer" onClick={handleLogout}>
